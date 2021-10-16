@@ -1,0 +1,23 @@
+use lojapi02;
+
+select * from cliente;
+drop table cliente;
+
+insert into cliente 
+(nome,sexo,email,estado_civil,cpf,data_nascimento,endereco)
+values
+("kaique ferraz","masculino","xxx@gmail.com","solteiro", "48200678857","19971210","rua joao silva"),
+("jane ferraz","feminino", "xxx@gmail.com","solteiro", "14336488819","19971210","rua joao silva"),
+("ronaldo","masculino","xxx@gmail.com","solteiro", "46324475018","19971210","rua joao silva"),
+("cleber","masculino","xxx@gmail.com","solteiro", "44671612011","19971210","rua joao silva"),
+("cris ferraz","masculino","xxx@gmail.com","solteiro", "03861506050","19971210","rua joao silva"),
+("fabio ferraz","masculino","xxx@gmail.com","solteiro", "17019311091","19971210","rua joao silva"),
+("jefferson ferraz","masculino","xxx@gmail.com","solteiro", "89352176030","19971210","rua joao silva"),
+("kaka ","feminino","xxx@gmail.com","solteiro", "88773081094","19971210","rua joao silva"),
+("pique ","feminino","xxx@gmail.com","solteiro", "70366254065","19971210","rua joao silva"),
+("messi ","feminino","xxx@gmail.com","solteiro", "91284414000","19971210","rua joao silva"),
+("ibra ","feminino","xxx@gmail.com","solteiro", "82610680058","19971210","rua joao silva"),
+("eto ","feminino","xxx@gmail.com","solteiro", "81186377003","19971210","rua joao silva"),
+("crespo ","feminino","xxx@gmail.com","solteiro", "58774699083","19971210","rua joao silva"),
+("souza ","feminino","xxx@gmail.com","solteiro", "00917557000","19971210","rua joao silva"),
+("neto ","feminino","xxx@gmail.com","solteiro", "31630713090","19971210","rua joao silva");

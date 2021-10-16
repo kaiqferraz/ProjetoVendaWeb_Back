@@ -1,0 +1,7 @@
+{
+    "id": 2,
+    "nome": "jane ferraz",
+    "sexo": "masculino",
+    "email": "jane@gmail.com",
+    "endereco": "rua joao veiga"
+}
