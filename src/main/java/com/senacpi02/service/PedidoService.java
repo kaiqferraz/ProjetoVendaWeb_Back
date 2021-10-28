@@ -1,18 +1,20 @@
 package com.senacpi02.service;
 
 
-
 import com.senacpi02.model.ItemPedido;
 import com.senacpi02.model.Pedido;
+
 import com.senacpi02.repository.ItemPedidoRepository;
 import com.senacpi02.repository.PedidoRepository;
 import com.senacpi02.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -36,6 +38,10 @@ public class PedidoService {
                 + ", Tipo: " + Pedido.class.getName()));
     }
 
+    public List<Pedido> findAll() {
+        return pedidoRepository.findAll();
+
+    }
 
     @Transactional
     public Pedido inserir(Pedido obj) {
@@ -53,7 +59,6 @@ public class PedidoService {
         itemPedidoRepository.saveAll(obj.getItens());
         return obj;
     }
-
 
 
 }
