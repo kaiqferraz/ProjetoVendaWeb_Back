@@ -3,6 +3,8 @@ package com.senacpi02.controller;
 
 import com.senacpi02.model.Pedido;
 
+import com.senacpi02.repository.ClienteRepository;
+import com.senacpi02.repository.PedidoRepository;
 import com.senacpi02.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,6 +24,9 @@ public class PedidoController {
 
     @Autowired
     private PedidoService service;
+
+    @Autowired
+    private PedidoRepository pedidoRepository;
 
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -44,20 +49,14 @@ public class PedidoController {
         return ResponseEntity.ok().body(list);
     }
 
-
-
-
-    /*
-    @RequestMapping(method=RequestMethod.GET)
-    public ResponseEntity<Page<Pedido>> findPage(
-            @RequestParam(value="page", defaultValue="0") Integer page,
-            @RequestParam(value="linesPerPage", defaultValue="24") Integer linesPerPage,
-            @RequestParam(value="orderBy", defaultValue="instante") String orderBy,
-            @RequestParam(value="direction", defaultValue="DESC") String direction) {
-        Page<Pedido> list = service.findPage(page, linesPerPage, orderBy, direction);
-        return ResponseEntity.ok().body(list);
+    @RequestMapping
+    public List<Pedido> pesquisar(@RequestParam(value = "nome", required = false, defaultValue = "") String nome,
+                                           @RequestParam(value = "mes", required = false) Integer mes) {
+        nome = "%" + nome + "%";
+        return pedidoRepository.findByNomeAndMes(nome, mes);
     }
-*/
+
+
 
 
 }
