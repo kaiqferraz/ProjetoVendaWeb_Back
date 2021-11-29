@@ -7,7 +7,6 @@ import com.senacpi02.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +15,6 @@ public class ClienteService {
 
     @Autowired
     private ClienteRepository clienteRepository;
-
 
     public Cliente findById(Integer id) {
         Optional<Cliente> obj = clienteRepository.findById(id);
@@ -30,17 +28,10 @@ public class ClienteService {
 
     }
 
-
-
-
-
-
-
     public Cliente create(Cliente obj) {
         obj.setId(null);
         return clienteRepository.save(obj);
     }
-
 
     public Cliente update(Integer id, ClienteDTO objDto) {
         Cliente obj = findById(id);
@@ -54,11 +45,8 @@ public class ClienteService {
         return clienteRepository.save(obj);
     }
 
-
     public void delete(Integer id) {
         Cliente obj = findById(id);
         clienteRepository.delete(obj);
     }
-
-
 }
